@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     String wordClicked = "";
 
-    boolean isChecked = false;
+    boolean isCheckedDBS = false;
+    boolean isCheckedOCBC = false;
+    boolean isCheckedUOB = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreateContextMenu(menu, v, menuInfo);
         getMenuInflater().inflate(R.menu.menu, menu);
 
-        MenuItem checkable = menu.findItem(R.id.checkable_menu);
-        checkable.setChecked(isChecked);
 
         if (v == DBS) {
             wordClicked = "DBS";
@@ -76,13 +76,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + getString(R.string.bank1NO)));
                 startActivity(intentCall);
                 return true;
-            }else if (id == R.id.checkable_menu) {
-                if(isChecked){
+            }else if (id == R.id.FavSelection) {
+                if(isCheckedDBS == true){
                     DBS.setTextColor(Color.BLACK);
-                    isChecked = false;
+                    isCheckedDBS = false;
                 }else{
                     DBS.setTextColor(Color.RED);
-                    isChecked = true;
+                    isCheckedDBS = true;
                 }
 
                 return true;
@@ -96,13 +96,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + getString(R.string.bank2NO)));
                 startActivity(intentCall);
                 return true;
-            }else if (id == R.id.checkable_menu) {
-                if(isChecked){
+            }else if (id == R.id.FavSelection) {
+                if(isCheckedOCBC){
                     OCBC.setTextColor(Color.BLACK);
-                    isChecked = false;
+                    isCheckedOCBC = false;
                 }else{
                     OCBC.setTextColor(Color.RED);
-                    isChecked = true;
+                    isCheckedOCBC = true;
                 }
 
                 return true;
@@ -116,13 +116,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + getString(R.string.bank3NO)));
                 startActivity(intentCall);
                 return true;
-            }else if (id == R.id.checkable_menu) {
-                if(isChecked){
+            }else if (id == R.id.FavSelection) {
+                if(isCheckedUOB){
                     UOB.setTextColor(Color.BLACK);
-                    isChecked = false;
+                    isCheckedUOB = false;
                 }else{
                     UOB.setTextColor(Color.RED);
-                    isChecked = true;
+                    isCheckedUOB = true;
                 }
 
                 return true;

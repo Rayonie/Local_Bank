@@ -9,10 +9,10 @@
         android:id="@+id/contactSelection"
         android:orderInCategory="101"
         android:title="Contact Bank" />
-
     <item
-        android:id="@+id/checkable_menu"
-        android:checkable="true"
+        android:id="@+id/FavSelection"
+        android:orderInCategory="101"
         android:title="Favourite" />
+
 
 </menu>
